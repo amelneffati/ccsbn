@@ -103,7 +103,9 @@ fos_user:
 # Sonata Configuration
 sonata_intl:
     timezone:
-        default: Europe/Paris
+        locales:
+            fr:    Europe/Paris
+            en_UK: Europe/London
 
 sonata_user:
     security_acl: true
