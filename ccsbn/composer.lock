@@ -3909,16 +3909,16 @@
         },
         {
             "name": "sonata-project/media-bundle",
-            "version": "3.15.0",
+            "version": "3.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataMediaBundle.git",
-                "reference": "3e1e6656ba088f9a315073efb1c40067efbfec59"
+                "reference": "14ec9933438fef1cdda76629a222ed7643af1af1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataMediaBundle/zipball/3e1e6656ba088f9a315073efb1c40067efbfec59",
-                "reference": "3e1e6656ba088f9a315073efb1c40067efbfec59",
+                "url": "https://api.github.com/repos/sonata-project/SonataMediaBundle/zipball/14ec9933438fef1cdda76629a222ed7643af1af1",
+                "reference": "14ec9933438fef1cdda76629a222ed7643af1af1",
                 "shasum": ""
             },
             "require": {
@@ -4029,7 +4029,7 @@
                 "vimeo",
                 "youtube"
             ],
-            "time": "2018-07-06T21:03:23+00:00"
+            "time": "2018-09-23T20:36:58+00:00"
         },
         {
             "name": "sonata-project/news-bundle",

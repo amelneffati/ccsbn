@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">    
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+<div id="navbar-top" class="navbar-menu">
+    <div class="navbar-start">
+        <div class="navbar-item">
+            <i class="fas fa-map-marker-alt"></i> Avenue des Frères Lumière, 90000 Belfort
+        </div>
+        <div class="navbar-item">
+            <i class="fas fa-envelope"></i> ccsbnsecretariat@yahoo.fr
+        </div>
+    </div>
+
+    <div class="navbar-end">
+        {% if is_granted("ROLE_ADMIN") %}
+            <div class="navbar-item" href="#">
+                <i class="fas fa-unlock-alt"></i>
+                <a href="{{ path('sonata_admin_dashboard') }}">Dashboard</a>
+            </div>   
+        {% endif %}
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div class="navbar-item" href="#">
+                <i class="fas fa-user-alt"></i>
+                <a href="{{ path('fos_user_profile_show') }}">Mon profil</a>
+            </div>  
+            <div class="navbar-item" href="#">
+                <a href="{{ path('fos_user_security_logout') }}" class="button is-rounded is-small">Déconnexion</a>
+            </div>
+        {% else %}
+            <div class="navbar-item" href="#">
+                <a href="{{ path('fos_user_security_login') }}" class="button is-rounded is-small">Connexion</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<nav id="navbar-bottom" class="navbar is-transparent">
+    <div class="navbar-brand">
+        <div class="navbar-item">
+            <a class="logo" href="{{ path('homepage') }}"><span class="logo-one">Centre culturel</span> Belf<span class="logo-two">o</span>rt Nord</a>
+        </div>
+    </div>
+
+    <div id="navbar-bottom" class="navbar-menu">
+    <div class="navbar-end">
+        <a class="navbar-item" href="{{ path('homepage') }}">Accueil</a>
+        <a class="navbar-item" href="#">Les actualitées</a>
+        <a class="navbar-item" href="#">La structure</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="#">Le secteur famille</a>
+            <div class="navbar-dropdown is-boxed">
+                <div class="navbar-item" href="#">Soutien à la parentalité</div>
+                <div class="navbar-item" href="#">Insertion socio-professionnelle</div>
+                <div class="navbar-item" href="#">Médiation culturelle</div>
+                <div class="navbar-item" href="#">Citoyenneté</div>
+                <div class="navbar-item" href="#">Séjours/Sorties</div>
+            </div>
+        </div>
+        <a class="navbar-item" href="#"><i class="fas fa-envelope"></i>Contact</a>
+    </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+{% block footer %}
+<footer class="footer fixed-bottom">
+    <div class="container">
+    <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer>
+{% endblock %}
+
+{% block javascripts %}
+    <link rel="stylesheet" href="{{ asset('assets/js/burger.js') }}">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+{% endblock %}

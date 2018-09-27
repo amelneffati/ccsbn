@@ -2,12 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}CCSBN{% endblock %}</title>
+        {% block stylesheets %}
+        {% endblock %}
     </head>
+
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <header>
+            {% block header %}
+            {% endblock %}
+        </header>
+
+        {% block body %}
+        {% endblock %}
+
+        <footer class="">
+            {% block footer %}
+            {% endblock %}
+        </footer>
+
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>

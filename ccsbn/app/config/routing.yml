@@ -48,4 +48,4 @@ media:
 
 news:
     resource: '@SonataNewsBundle/Resources/config/routing/news.xml'
-    prefix: /news
+    prefix: /
