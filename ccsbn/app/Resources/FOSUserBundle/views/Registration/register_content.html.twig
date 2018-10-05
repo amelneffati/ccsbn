@@ -1,0 +1,75 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+<div class="columns" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="column is-half is-offset-one-quarter">
+        <div class="box">
+            <form action="{{ path('fos_user_registration_register') }}" method="POST">
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" placeholder="Nom d'utilisateur" type="text"
+                        {{ form_widget(form.username, {'attr': {'class': 'form-control'} }) }}
+                        {{ form_errors(form.username) }}                    
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+
+                <label id="label-box"></label>
+
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" placeholder="E-mail" type="text"
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control' }}) }}
+                        {{ form_errors(form.email) }}                    
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-at"></i>
+                    </span>
+                </div>
+
+                <label id="label-box"></label>
+
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" placeholder="Mot de passe" type="password"
+                        {{ form_widget(form.plainPassword.first, {
+                            'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Au moins 6 caractères'|trans
+                            }
+                        }) }}
+                        {{ form_errors(form.plainPassword.first) }}                    
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </div>
+
+                <div id="alert-box" style="margin-top: 0.3rem;">
+                    <i class="fas fa-exclamation"></i>
+                    Les mots de passe doivent au moins avoir 6 caractères.
+                </div>
+
+                <label style="margin-top: 1rem; margin-bottom: 0.2rem;" id="label-box">Entrez le mot de passe à nouveau</label>
+
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" placeholder="Mot de passe" type="password"
+                        {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.plainPassword.second) }}
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </div>
+
+                <div class="login-more-content">
+                    <div class="checkbox">
+                        <a class="forgot-password" href="{{ path('fos_user_security_login') }}">Vous êtes déjà inscrit ?</a>
+                    </div>
+                    <button class="button is-rounded is-link is-outlined login-button" type="submit" value="{{ 'registration.submit'|trans }}">S'inscrire</a>
+                </div>
+                {{ form_rest(form) }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

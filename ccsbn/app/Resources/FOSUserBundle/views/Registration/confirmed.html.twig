@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+<div class="columns" style="padding-top: 7rem; padding-bottom: 9.4rem;">
+    <div class="column is-half is-offset-one-quarter">
+        <div class="box">
+			<p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+        </div>
+    </div>
+</div>
+{% endblock body %}

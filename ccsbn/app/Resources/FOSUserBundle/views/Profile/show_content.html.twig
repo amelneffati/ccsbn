@@ -1,0 +1,30 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+{% endblock %}
+
+<div class="columns" style="padding-top: 4rem; padding-bottom: 5.4rem;">
+    <div class="column is-half is-offset-one-quarter">
+        <div class="box">
+              <div class="control has-icons-left has-icons-right">
+                  <input class="input" placeholder="{{ user.username }}" disabled type="text"/>
+                  <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                  </span>
+              </div>
+
+              <label id="label-box"></label>
+
+              <div class="control has-icons-left has-icons-right">
+                  <input class="input" placeholder=" {{ user.email }}" disabled type="text"/>
+                  <span class="icon is-small is-left">
+                      <i class="fas fa-envelope-open"></i>
+                  </span>
+              </div>
+
+              <div class="login-more-content align-end">
+                  <a href="{{ path("fos_user_profile_edit") }}"><button class="button is-rounded is-link is-outlined login-button">Editer mon profil</button></a>
+              </div>
+        </div>
+    </div>
+</div>

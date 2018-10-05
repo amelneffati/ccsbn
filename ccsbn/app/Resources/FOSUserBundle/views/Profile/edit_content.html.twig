@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+<div class="columns" style="padding-top: 3rem; padding-bottom: 3rem;">
+    <div class="column is-half is-offset-one-quarter">
+        <div class="box">
+            {{ form_start(form, {
+                'action': path('fos_user_profile_edit'),
+                'attr': {'class': 'fos_user_profile_edit'}
+            }) }}
+                {{ form_widget(form) }}
+        
+                <div class="login-more-content align-end">
+                    <input class="button is-rounded is-link is-outlined login-button" type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/assets/js/add_class.js"></script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+{% endblock %}
+
+<div class="columns" style="padding-top: 4.9rem; padding-bottom: 4.9rem;">
+    <div class="column is-half is-offset-one-quarter">
+        <div class="box">
+			<div class="notification">
+                <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" placeholder="Nom d'utilisateur ou adresse e-mail" type="text" id="username" name="username" required="required"/>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-question"></i>
+                    </span>
+                </div>
+                <div>
+                    <button class="button is-rounded request-button" type="submit" value="{{ 'resetting.request.submit'|trans }}">Réinitialiser le mot de passe</a>
+                </div>
+                </form>                
+			</div>
+        </div>
+    </div>
+</div>

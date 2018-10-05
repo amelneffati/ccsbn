@@ -8,7 +8,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi: ~
@@ -77,6 +77,8 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
+    encryption: '%mailer_encryption%'
+    auth_mode:  '%mailer_auth_mode%'
     host: '%mailer_host%'
     username: '%mailer_user%'
     password: '%mailer_password%'
@@ -97,8 +99,16 @@ fos_user:
     service:
         user_manager: sonata.user.orm.user_manager
     from_email:
-        address: "%mailer_user%"
-        sender_name: "%mailer_user%"
+        address: '%mailer_user%'
+        sender_name: 'CCSBN'
+    registration:
+        confirmation:
+            enabled: true
+            from_email:
+                address: '%mailer_user%'
+                sender_name: 'CCSBN'
+            template: '@FOSUser/Registration/email.txt.twig'
+
 
 # Sonata Configuration
 sonata_admin:
@@ -197,14 +207,15 @@ sonata_media:
 
             formats:
                 small: { width: 150 , quality: 95}
-                big:   { width: 500 , quality: 90}       
+                big:   { width: 500 , quality: 90}
+                post:   { width: 380 , quality: 90}         
     cdn:
         server:
             path: /uploads/media
     filesystem:
         local:
-            directory: "%kernel.root_dir%/../public/uploads/media" #flex
-            #directory: "%kernel.root_dir%/../web/uploads/media" #non-flex
+            #directory: "%kernel.root_dir%/../public/uploads/media" #flex
+            directory: "%kernel.root_dir%/../web/uploads/media"
             create: false
     providers:
         image:

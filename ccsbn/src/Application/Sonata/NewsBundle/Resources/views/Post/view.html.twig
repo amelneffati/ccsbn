@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
 
 {% block sonata_page_breadcrumb %}
@@ -51,21 +52,23 @@
     </header>
 
     <div class="sonata-blog-post-content">
-        {% media post.image, 'wide' %}
+        {% media post.image, 'big' %}
         {{ post.content|raw }}
     </div>
 
     {{ render(controller('SonataNewsBundle:Post:comments', {'postId': post.id})) }}
 
-    {% if post.iscommentable %}
-        {{ render(controller('Sonata\\NewsBundle\\Action\\CreateCommentFormAction', {
-            'postId': post.id,
-            'form': form
-        })) }}
-    {% else %}
-        <div>
-            {{ 'message_comments_are_closed'|trans({}, 'SonataNewsBundle') }}
-        </div>
-    {% endif %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {% if post.iscommentable %}
+            {{ render(controller('Sonata\\NewsBundle\\Action\\CreateCommentFormAction', {
+                'postId': post.id,
+                'form': form
+            })) }}
+        {% else %}
+            <div>
+                {{ 'message_comments_are_closed'|trans({}, 'SonataNewsBundle') }}
+            </div>
+        {% endif %}
+    {% endif %}    
 </article>
 {% endblock %}

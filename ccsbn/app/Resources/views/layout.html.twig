@@ -10,76 +10,104 @@
 {% endblock %}
 
 {% block header %}
-<div id="navbar-top" class="navbar-menu">
-    <div class="navbar-start">
-        <div class="navbar-item">
-            <i class="fas fa-map-marker-alt"></i> Avenue des Frères Lumière, 90000 Belfort
+    <div id="navbar-top" class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item">
+                <i class="fas fa-map-marker-alt"></i> Avenue des Frères Lumière, 90000 Belfort
+            </div>
+            <div class="navbar-item">
+                <i class="fas fa-envelope"></i> ccsbnsecretariat@yahoo.fr
+            </div>
         </div>
-        <div class="navbar-item">
-            <i class="fas fa-envelope"></i> ccsbnsecretariat@yahoo.fr
+
+        <div class="navbar-end">
+            {% if is_granted("ROLE_ADMIN") %}
+                <div class="navbar-item" href="#">
+                    <i class="fas fa-unlock-alt"></i>
+                    <a href="{{ path('sonata_admin_dashboard') }}">Dashboard</a>
+                </div>   
+            {% endif %}
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <div class="navbar-item" href="#">
+                    <i class="fas fa-user-alt"></i>
+                    <a href="{{ path('fos_user_profile_show') }}">Mon profil</a>
+                </div>  
+                <div class="navbar-item" href="#">
+                    <a href="{{ path('fos_user_security_logout') }}" class="button is-rounded is-small">Déconnexion</a>
+                </div>
+            {% else %}
+                <div class="navbar-item" style="margin-right: -1rem;" href="#">
+                    <a href="{{ path('fos_user_security_login') }}" class="button is-rounded is-small">Connexion</a>
+                </div>
+                <div class="navbar-item" href="#">
+                    <a href="{{ path('fos_user_registration_register') }}" class="button is-rounded is-small">Inscription</a>
+                </div>
+            {% endif %}
         </div>
     </div>
 
-    <div class="navbar-end">
-        {% if is_granted("ROLE_ADMIN") %}
-            <div class="navbar-item" href="#">
-                <i class="fas fa-unlock-alt"></i>
-                <a href="{{ path('sonata_admin_dashboard') }}">Dashboard</a>
-            </div>   
-        {% endif %}
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <div class="navbar-item" href="#">
-                <i class="fas fa-user-alt"></i>
-                <a href="{{ path('fos_user_profile_show') }}">Mon profil</a>
-            </div>  
-            <div class="navbar-item" href="#">
-                <a href="{{ path('fos_user_security_logout') }}" class="button is-rounded is-small">Déconnexion</a>
-            </div>
-        {% else %}
-            <div class="navbar-item" href="#">
-                <a href="{{ path('fos_user_security_login') }}" class="button is-rounded is-small">Connexion</a>
-            </div>
-        {% endif %}
-    </div>
-</div>
-
-<nav id="navbar-bottom" class="navbar is-transparent">
-    <div class="navbar-brand">
-        <div class="navbar-item">
-            <a class="logo" href="{{ path('homepage') }}"><span class="logo-one">Centre culturel</span> Belf<span class="logo-two">o</span>rt Nord</a>
-        </div>
-    </div>
-
-    <div id="navbar-bottom" class="navbar-menu">
-    <div class="navbar-end">
-        <a class="navbar-item" href="{{ path('homepage') }}">Accueil</a>
-        <a class="navbar-item" href="#">Les actualitées</a>
-        <a class="navbar-item" href="#">La structure</a>
-        <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="#">Le secteur famille</a>
-            <div class="navbar-dropdown is-boxed">
-                <div class="navbar-item" href="#">Soutien à la parentalité</div>
-                <div class="navbar-item" href="#">Insertion socio-professionnelle</div>
-                <div class="navbar-item" href="#">Médiation culturelle</div>
-                <div class="navbar-item" href="#">Citoyenneté</div>
-                <div class="navbar-item" href="#">Séjours/Sorties</div>
+    <nav id="navbar-bottom" class="navbar is-transparent">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <a class="logo" href="{{ path('homepage') }}"><span class="logo-one">Centre culturel</span> Belf<span class="logo-two">o</span>rt Nord</a>
             </div>
         </div>
-        <a class="navbar-item" href="#"><i class="fas fa-envelope"></i>Contact</a>
-    </div>
-    </div>
-</nav>
+
+        <div id="navbar-bottom" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="{{ path('homepage') }}">Accueil</a>
+            <a class="navbar-item" href="#">Les actualitées</a>
+            <a class="navbar-item" href="#">La structure</a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="#">Le secteur familles</a>
+                <div class="navbar-dropdown is-boxed">
+                    <div class="navbar-item" href="#">Soutien à la parentalité</div>
+                    <div class="navbar-item" href="#">Insertion socio-professionnelle</div>
+                    <div class="navbar-item" href="#">Médiation culturelle</div>
+                    <div class="navbar-item" href="#">Citoyenneté</div>
+                    <div class="navbar-item" href="#">Séjours/Sorties</div>
+                </div>
+            </div>
+            <a class="navbar-item" href="#"><i class="fas fa-envelope"></i>Contact</a>
+        </div>
+        </div>
+    </nav>
 {% endblock %}
 
 {% block body %}
+<body>
+</body>
 {% endblock %}
 
 {% block footer %}
-<footer class="footer fixed-bottom">
-    <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
-    </div>
-</footer>
+    <footer class="footer fixed-bottom">
+        <div class="columns">
+            <div class="column is-full align-center">
+                <a href="http://www.oikos-belfort.fr">
+                    <img alt="oikos" width="80" class="" src="http://www.oikos-belfort.fr/wp-content/uploads/2018/02/logo_oikos_white_footer_retina.png">
+                </a>
+            </div>
+        </div> 
+        </div>
+        <div class="columns">       
+            <div class="column is-4">
+                <a class="footer-link" href="#">Mention légales /</a>
+                <a class="footer-link" href="#"> Utilisation des cookies /</a>
+                <a class="footer-link" href="http://www.oikos-belfort.fr/">Oïkos-Belfort.fr</a>
+            </div>
+
+            <div class="column is-4 align-center">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-google-plus-g"></i>
+            </div>
+
+            <div class="column is-4 align-end">
+                <a class="copyright" href="#">@Copyright 2018 Centre culturel Belfort Nord</a>
+            </div>
+        </div>
+    </footer>
 {% endblock %}
 
 {% block javascripts %}
