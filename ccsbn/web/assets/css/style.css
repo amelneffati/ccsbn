@@ -147,6 +147,42 @@ a.navbar-item:hover, .navbar-link:hover, .navbar-item:hover {
   color: #005daa;
 }
 
+.article-title {
+  font-size: 1.4rem;
+}
+
+.tag:not(body).is-info {
+  background-color: #005daa;
+  color: #fff;
+}
+
+.article-body {
+  margin-top: 1.4rem;
+}
+
+.message-body {
+  font-size: 0.8rem;
+}
+
+.sonata-comments-title {
+  font-size: 1rem;
+  color: #78ab1b;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.sonata-blog-comment-name {
+  font-weight: bold;
+}
+
+.sonata-blog-comment-message {
+  margin-bottom: 0.8rem;
+}
+
+.no-comments {
+  font-size: 0.8rem;
+}
+
 /* LOGIN */
 .login-more-content {
   display: flex;
@@ -174,4 +210,5 @@ a.navbar-item:hover, .navbar-link:hover, .navbar-item:hover {
 /* EDIT */
 label {
   margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }

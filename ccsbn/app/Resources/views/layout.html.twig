@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 {% endblock %}
 
 {% block header %}
@@ -56,7 +57,7 @@
         <div id="navbar-bottom" class="navbar-menu">
         <div class="navbar-end">
             <a class="navbar-item" href="{{ path('homepage') }}">Accueil</a>
-            <a class="navbar-item" href="#">Les actualitées</a>
+            <a class="navbar-item" href="{{ path('homepage') }}">Les actualitées</a>
             <a class="navbar-item" href="#">La structure</a>
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link" href="#">Le secteur familles</a>
@@ -75,8 +76,6 @@
 {% endblock %}
 
 {% block body %}
-<body>
-</body>
 {% endblock %}
 
 {% block footer %}
@@ -111,7 +110,6 @@
 {% endblock %}
 
 {% block javascripts %}
-    <link rel="stylesheet" href="{{ asset('assets/js/burger.js') }}">
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
