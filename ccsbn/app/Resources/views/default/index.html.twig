@@ -2,7 +2,6 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 {% endblock %}
 
 {% block header %}
@@ -10,7 +9,7 @@
 
 {% block body %}
     {{ parent() }}
-    {{ render(controller('SonataNewsBundle:Post:archiveMonthly', { year : 2018, month : 9, request : app.request }   
+    {{ render(controller('SonataNewsBundle:Post:archiveYearly', { year : 2018, request : app.request }   
     )) }}
 {% endblock %}
 

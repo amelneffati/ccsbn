@@ -113,7 +113,7 @@ fos_user:
 # Sonata Configuration
 sonata_admin:
     templates:
-        layout:  SonataAdminBundle::layout.html.twig
+        layout:  adminlayout.html.twig
     assets:
         extra_javascripts:
             - bundles/fosckeditor/ckeditor.js

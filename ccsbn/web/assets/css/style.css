@@ -277,23 +277,8 @@ button {
   border: 1px solid #005daa;
   color:#78ab1b;
   text-shadow:0;
-  font:{
-    size:12px;
-    weight:bold;
-  }
   cursor: pointer;
   transition: all 0.25s ease;
-  &:hover {
-    color:white;
-    background: #78ab1b;
-  }
-  &:active {
-    //letter-spacing: 2px;
-    letter-spacing: 2px ;
-  }
-  &:after {
-    content:"Envoyer";
-  }
 }
 .onclic {
   width: 40px;
@@ -302,14 +287,6 @@ button {
   font-size:0;
   border-left-color:#78ab1b;
   animation: rotating 2s 0.25s linear infinite;
-
-  &:after {
-    content:"";
-  }
-  &:hover {
-    color:#005daa;
-    background: white;
-  }
 }
 
 @keyframes rotating {
