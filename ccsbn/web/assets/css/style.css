@@ -29,6 +29,12 @@ a.navbar-item:hover, .navbar-link:hover, .navbar-item:hover {
   font-family: 'Montserrat', sans-serif;
 }
 
+label {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+}
+
 /* NAVBAR */
 .logo, .logo:hover {
   font-family: 'Fredoka One', cursive;
@@ -126,8 +132,9 @@ a.navbar-item:hover, .navbar-link:hover, .navbar-item:hover {
 }
 
 .sonata-blog-post-img img {
-  height: 100%;
   max-width: 100%;
+  height: auto;
+  display:block;
 }
 
 .sonata-blog-post-img {
@@ -160,7 +167,7 @@ a.navbar-item:hover, .navbar-link:hover, .navbar-item:hover {
   margin-top: 1.4rem;
 }
 
-.message-body {
+.message-body-comments {
   font-size: 0.8rem;
 }
 
@@ -181,6 +188,24 @@ a.navbar-item:hover, .navbar-link:hover, .navbar-item:hover {
 
 .no-comments {
   font-size: 0.8rem;
+}
+
+.comment-input {
+  width: 20rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-area {
+  margin-bottom: 1rem;
+  width: 20rem;
+}
+
+.separation-comments {
+  background-color: lightgrey;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 0.5rem 0;
 }
 
 /* LOGIN */
@@ -208,7 +233,102 @@ a.navbar-item:hover, .navbar-link:hover, .navbar-item:hover {
 }
 
 /* EDIT */
-label {
+
+
+/* SECTEUR FAMILLES */
+.public-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #005daa;
+}
+
+.public-p {
   margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  margin-right: 4em;
+  text-align: justify;
+  padding-bottom: 1.4rem;
+}
+
+.public-blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.public-img {
+  margin-left: 2.5rem;
+  margin-top: .4rem;
+}
+
+/* STRUCTURE */
+.message-body-structure {
+  font-size: 0.90rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* CONTACT */
+button {
+  outline:none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius:40px;
+  background: #fff;
+  border: 1px solid #005daa;
+  color:#78ab1b;
+  text-shadow:0;
+  font:{
+    size:12px;
+    weight:bold;
+  }
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color:white;
+    background: #78ab1b;
+  }
+  &:active {
+    //letter-spacing: 2px;
+    letter-spacing: 2px ;
+  }
+  &:after {
+    content:"Envoyer";
+  }
+}
+.onclic {
+  width: 40px;
+  border-color:#bbbbbb;
+  border-width:3px;
+  font-size:0;
+  border-left-color:#78ab1b;
+  animation: rotating 2s 0.25s linear infinite;
+
+  &:after {
+    content:"";
+  }
+  &:hover {
+    color:#005daa;
+    background: white;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #78ab1b;
+  margin-bottom: 0.6rem;
+  margin-top: 1rem;
+}
+
+.form-control {
+  font-size: inherit;
 }

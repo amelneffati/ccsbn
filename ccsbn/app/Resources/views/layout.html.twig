@@ -52,24 +52,29 @@
             <div class="navbar-item">
                 <a class="logo" href="{{ path('homepage') }}"><span class="logo-one">Centre culturel</span> Belf<span class="logo-two">o</span>rt Nord</a>
             </div>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
 
         <div id="navbar-bottom" class="navbar-menu">
         <div class="navbar-end">
-            <a class="navbar-item" href="{{ path('homepage') }}">Accueil</a>
             <a class="navbar-item" href="{{ path('homepage') }}">Les actualitées</a>
-            <a class="navbar-item" href="#">La structure</a>
+            <a class="navbar-item" href="{{ path('structure') }}">La structure</a>
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="#">Le secteur familles</a>
+                <div class="navbar-link">Le secteur familles</div>
                 <div class="navbar-dropdown is-boxed">
-                    <div class="navbar-item" href="#">Soutien à la parentalité</div>
-                    <div class="navbar-item" href="#">Insertion socio-professionnelle</div>
-                    <div class="navbar-item" href="#">Médiation culturelle</div>
-                    <div class="navbar-item" href="#">Citoyenneté</div>
-                    <div class="navbar-item" href="#">Séjours/Sorties</div>
+                    <a class="navbar-item" href="{{ path('family') }}#sp">Soutien à la parentalité</a>
+                    <a class="navbar-item" href="{{ path('family') }}#isp">Insertion socio-professionnelle</a>
+                    <a class="navbar-item" href="{{ path('family') }}#mc">Médiation culturelle</a>
+                    <a class="navbar-item" href="{{ path('family') }}#c">Citoyenneté</a>
+                    <a class="navbar-item" href="{{ path('family') }}#ss">Séjours/Sorties</a>
                 </div>
             </div>
-            <a class="navbar-item" href="#"><i class="fas fa-envelope"></i>Contact</a>
+            <a class="navbar-item" href="{{ path('contact') }}"><i class="fas fa-envelope"></i>Contact</a>
         </div>
         </div>
     </nav>
@@ -89,7 +94,7 @@
         </div> 
         </div>
         <div class="columns">       
-            <div class="column is-4">
+            <div class="column is-4 is-full-mobile">
                 <a class="footer-link" href="#">Mention légales /</a>
                 <a class="footer-link" href="#"> Utilisation des cookies /</a>
                 <a class="footer-link" href="http://www.oikos-belfort.fr/">Oïkos-Belfort.fr</a>

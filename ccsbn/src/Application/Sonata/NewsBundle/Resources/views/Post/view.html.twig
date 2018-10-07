@@ -57,9 +57,9 @@
 
 <div class="column is-8 is-offset-2">
     <article class="message">
-        <div class="message-body">
+        <div class="message-body message-body-comments">
             {{ render(controller('SonataNewsBundle:Post:comments', {'postId': post.id})) }}
-
+            <hr class="separation-comments">
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {% if post.iscommentable %}
                     {{ render(controller('Sonata\\NewsBundle\\Action\\CreateCommentFormAction', {
@@ -79,4 +79,5 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="/assets/js/add_class.js"></script>
 {% endblock %}
